@@ -11,7 +11,7 @@
 
   --clr-divider-light: hsla(0, 0%, 100%, 30%);  
   --clr-divider-dark: hsla(233, 13%, 49%, 30%); 
-  --clr-shadow: hsla(236, 72%, 79%, 25%);
+  --clr-shadow: hsla(236, 72%, 79%, 20%);
   
   --ff-base: 'Montserrat', sans-serif;
 }
