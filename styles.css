@@ -1,0 +1,241 @@
+:root {
+  --clr-primary-200: hsl(236, 67%, 86%);
+  --clr-primary-300: hsl(236, 72%, 79%);
+  --clr-primary-500: hsl(237, 63%, 64%);
+  
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: hsl(240, 78%, 98%);
+  --clr-neutral-300: hsl(234, 14%, 74%);
+  --clr-neutral-500: hsl(233, 13%, 49%);
+  --clr-neutral-700: hsl(232, 13%, 33%);
+
+  --clr-divider-light: hsla(0, 0%, 100%, 30%);  
+  --clr-divider-dark: hsla(233, 13%, 49%, 30%); 
+  --clr-shadow: hsla(236, 72%, 79%, 25%);
+  
+  --ff-base: 'Montserrat', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--ff-base);
+  font-size: 0.938rem;
+  color: var(--clr-neutral-500);
+  background-color: var(--clr-neutral-200);
+  background-image: url("images/bg-top.svg");
+  background-repeat: no-repeat;
+  background-position: right -12rem top -2rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.hidden {
+  display: none !important;
+}
+
+h1 {
+  margin-top: 3rem;
+  font-size: 2rem;
+}
+
+.toggle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  color: var(--clr-neutral-300);
+}
+
+.toggle-button {
+  position: relative;
+  width: 3.5rem;
+  height: 2rem;
+  background: linear-gradient(
+    90deg, 
+    var(--clr-primary-300), 
+    var(--clr-primary-500));
+  border-radius: 3rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.toggle-button:focus-visible, 
+.toggle-button:hover {
+  background: var(--clr-primary-200);
+}
+
+.toggle-switch {
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  top: 50%;
+  right: 0.25rem;
+  transform: translateY(-50%);
+  background-color: var(--clr-neutral-100);
+  border-radius: 50%;
+}
+
+[aria-pressed=true] .toggle-switch {
+  left: 0.25rem;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  margin-top: 5rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 21.875rem;
+  padding: 2rem;
+  background-color: var(--clr-neutral-100);
+  border-radius: 0.6rem;
+  box-shadow: 0 1rem 2rem var(--clr-shadow);
+}
+
+.card h2 {
+  font-size: 1.15rem;
+}
+
+.card ul {
+  list-style-type: none;
+  width: 100%;
+}
+
+.card li {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  border-bottom: 0.063rem solid var(--clr-divider-dark);
+}
+
+.card-price {
+  padding: 1rem 0 1.5rem !important;
+  font-size: 4.5rem;
+  color: var(--clr-neutral-700);
+}
+
+.card-price::before {
+  content: "$";
+  font-size: 2.5rem;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 0.85rem;
+  background: linear-gradient(
+    90deg, 
+    var(--clr-primary-300), 
+    var(--clr-primary-500));
+  border: 0.063rem solid transparent;
+  border-radius: 0.4rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--clr-neutral-100);
+}
+
+.link:focus-visible, 
+.link:hover {
+  background: transparent !important;
+  border-color: var(--clr-neutral-500);
+  color: var(--clr-primary-500);
+}
+
+.professional {
+  background: linear-gradient(
+    135deg, 
+    var(--clr-primary-300), 
+    var(--clr-primary-500));
+  color: var(--clr-neutral-100);
+}
+
+.professional li {
+  border-bottom: 0.063rem solid var(--clr-divider-light);
+}
+
+.professional .card-price {
+  color: var(--clr-neutral-100);
+}
+
+.professional .link {
+  background: var(--clr-neutral-100);
+  color: var(--clr-primary-500);
+}
+
+.professional .link:focus-visible, 
+.professional .link:hover {
+  border-color: var(--clr-neutral-100);
+  color: var(--clr-neutral-100);
+}
+
+@media only screen and (min-width: 62.5em) {
+  body {
+    background-image: 
+      url("images/bg-top.svg"), 
+      url("images/bg-bottom.svg");
+    background-position: 
+      right top, 
+      left bottom;
+  }
+  
+  .card-container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 0;
+    margin-top: 4rem;
+  }
+  
+  .basic {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+   
+  .professional {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+  
+  .master {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
