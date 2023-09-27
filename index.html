@@ -13,11 +13,14 @@
   <main>
     <h1>Our Pricing</h1>
     <div class="toggle-container">
-      <p id="annually-label">Annually</p>
-      <button class="toggle-button" aria-labelledby="annually-label monthly-label" aria-pressed="false">
+      <p aria-hidden="true">Annually</p>
+      <button class="toggle-button" id="toggle-button">
         <span class="toggle-switch"></span>
       </button>
-      <p id="monthly-label">Monthly</p>
+      <label class="toggle-label visually-hidden" for="toggle-button">
+        Monthly pricing enabled
+      </label>
+      <p aria-hidden="true">Monthly</p>
     </div>
     <div class="card-container">
       <div class="card basic">

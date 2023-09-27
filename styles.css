@@ -98,7 +98,7 @@ h1 {
   border-radius: 50%;
 }
 
-[aria-pressed=true] .toggle-switch {
+.toggle-left {
   left: 0.25rem;
 }
 
