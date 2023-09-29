@@ -13,8 +13,5 @@ button.addEventListener("click", () => {
   
   annual = !annual;
   toggle.classList.toggle("toggle-left");
-
-  for (let i = 0; i < price.length; i++) {
-    price[i].classList.toggle("hidden");
-  }
+  price.forEach(e => e.classList.toggle("hidden"));
 });
