@@ -77,9 +77,8 @@ h1 {
     var(--clr-primary-300), 
     var(--clr-primary-500));
   border-radius: 3rem;
-  cursor: pointer;
   border: none;
-  outline: none;
+  cursor: pointer;
 }
 
 .toggle-button:focus-visible, 
